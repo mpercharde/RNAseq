@@ -23,11 +23,11 @@ raw/ (where raw files are)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-KEY NOTES:
-1. Remember to make a file where your raw files are kept. Raw files should end .fq or .gz NOT .fastq
-2. If your file is compressed as .fq.gz, remember to specify -g
-3. If your libraries are clontech, remember to use -c
+   KEY NOTES:
+	1. Remember to make a file where your raw files are kept. Raw files should end .fq or .gz NOT .fastq
+	2. If your file is compressed as .fq.gz, remember to specify -g
+	3. If your libraries are clontech, remember to use -c
 
-Good luck!
+   Good luck!
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
