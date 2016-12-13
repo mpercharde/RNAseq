@@ -12,6 +12,9 @@ Bam files can then be DLed and fed into FeatureCounts in R
 FOLDERS NEEDED IN ROOT:
 
 raw/ (where raw files are)
+
+NB: test-fq is a folder of two small, test .fq files that can be used as input folder to check pipeline.
+
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  ### Usage: ./runRNAseq2.sh [-h] [-g] [-c] [-i <path/to/files/>] ###
