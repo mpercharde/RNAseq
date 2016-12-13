@@ -5,20 +5,16 @@
 #                v1.1                             #
 ###################################################
 
-#~~~~~~~~~~EDIT BELOW THIS LINE ~~~~~~~~~~~~~~~~~~#
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Script that takes input with name "sample.fq" or "sample.fq.gz" and generates sorted bams
 Bam files can then be DLed and fed into FeatureCounts in R
 
-Usage: ./runRNAseq.sh [options] [-i path/to/folder/]
-
 FOLDERS NEEDED IN ROOT:
-	raw/ (where raw files are)
+
+raw/ (where raw files are)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Usage: ./runRNAseq2.sh [-h] [-g] [-c] [-i <path/to/files/>]
+ ### Usage: ./runRNAseq2.sh [-h] [-g] [-c] [-i <path/to/files/>] ###
 
     -h        Help mode, prints Usage
     -g        Input FASTQ is .gz compressed
