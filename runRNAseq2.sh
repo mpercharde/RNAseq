@@ -9,19 +9,15 @@
 
 #~~~~~~~~~~EDIT BELOW THIS LINE ~~~~~~~~~~~~~~~~~~#
 
-#README~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-# Script that takes input with name "sample.fq" or "sample.fq.gz" and generates sorted bams
+# Pipeline to take input dir with files "sample.fq" or "sample.fq.gz", outputs sorted bams
 # Bam files can then be DLed and fed into FeatureCounts in R
 
-#usage: ./runRNAseq.sh [options] [-i path/to/folder/]
+#usage: ./runRNAseq2.sh [options] [-i path/to/folder/]
 
 #FOLDERS NEEDED IN ROOT:
   #raw/ (where raw files are)
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#things to add - print out help messages
-#              - error check folders created
 
 flagcheck=0
 
