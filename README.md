@@ -9,7 +9,7 @@
 Script that takes input with name "sample.fq" or "sample.fq.gz" and generates sorted bams
 Bam files can then be DLed and fed into FeatureCounts in R
 
-UPDATE 12/13/16: Tophat currently not working with .gz files, use uncompressed.
+UPDATE 12/18/16: Tophat working with .gz or .fz files.
 
 
 FOLDERS NEEDED IN ROOT:
