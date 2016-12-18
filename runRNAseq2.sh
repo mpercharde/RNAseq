@@ -91,7 +91,7 @@ for file in "$dir"* ; do
     echo ""
     echo "2. aligning $name to mm10 plus ERCCs"
     echo ""
-    mkdir ${name}_aligned/
+    mkdir -p ${name}_aligned/
     tophat -o ${name}_aligned/ -p 4 -g 20 -G /data/refs/mm10/BTmm10_ercc/genes_ercc.gtf --no-coverage-search --library-type fr-firststrand \
     --no-novel-indels /data/refs/mm10/BTmm10_ercc/mm10_ercc trimmed/$trimfile ###prev ${name}_trimmed.fq
 
