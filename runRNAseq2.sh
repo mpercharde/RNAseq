@@ -30,11 +30,11 @@ while getopts ':gchi:' flag; do
         h) echo ""
            echo "Usage: $0 [-h] [-g] [-c] [-i <path/to/files/>]"
            echo ""
-  	       echo "    -h        Help mode, prints Usage"
-  	       echo "    -g        Input FASTQ is .gz compressed"
+           echo "    -h        Help mode, prints Usage"
+           echo "    -g        Input FASTQ is .gz compressed"
            echo "    -c        Libraries are CLONTECH"
-  	       echo "    -i        input file directory/. use "./" for current dir (not recommended)"
-  	       echo ""
+           echo "    -i        input file directory/. use "./" for current dir (not recommended)"
+           echo ""
            flagcheck=1
            exit 1 ;;
         \?)
