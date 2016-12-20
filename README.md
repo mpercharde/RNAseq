@@ -2,14 +2,15 @@
 #       RNAseq analysis pipeline                  #
 #       Michelle Percharde, PhD 2016              #
 #        michelle.percharde@ucsf.edu              #
-#                v1.1                             #
+#                v1.2                             #
 ###################################################
 
 
 Script that takes input with name "sample.fq" or "sample.fq.gz" and generates sorted bams
 Bam files can then be DLed and fed into FeatureCounts in R
 
-UPDATE 12/18/16: Tophat working with .gz or .fz files.
+UPDATE 12/18/16: Tophat working with .gz or .fq files.
+                 Currently, alignment is set to mm10 + ERCCs. 
 
 
 FOLDERS NEEDED IN ROOT:
@@ -50,4 +51,3 @@ KEY NOTES:
 3. If your libraries are clontech, use -c to trim off first 3 repetitive bp
 
    Good luck!
-
