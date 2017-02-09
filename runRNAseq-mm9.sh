@@ -4,18 +4,15 @@
 #       RNAseq analysis pipeline                  #
 #       Michelle Percharde, PhD 2016              #
 #                                                 #
-#                v Hg19                            #
+#                v.mm9                            #
 ###################################################
 
 #~~~~~~~~~~EDIT BELOW THIS LINE ~~~~~~~~~~~~~~~~~~#
 
-#Hg19 version plus ERCCs!
-
 # Pipeline to take input dir with files "sample.fq" or "sample.fq.gz", outputs sorted bams
-# Doesn't work if input files are .fastq!
 # Bam files can then be DLed and fed into FeatureCounts in R
 
-#usage: ./runRNAseq3.sh [options] [-i path/to/folder/]
+#usage: ./runRNAseq2.sh [options] [-i path/to/folder/]
 
 #FOLDERS NEEDED IN ROOT:
   #raw/ (where raw files are)
@@ -92,11 +89,11 @@ for file in "$dir"* ; do
     $trim --fastqc --fastqc_args " --outdir trimmed/fastqc/" --illumina $file -o trimmed/
 
     echo ""
-    echo "2. aligning $name to hg19 plus ERCCs"
+    echo "2. aligning $name to mm9 standard"
     echo ""
     mkdir -p ${name}_aligned/
-    tophat -o ${name}_aligned/ -p 4 -g 20 -G /data/refs/hg19/hg19_ercc/mod_hg19_ercc.gtf --no-coverage-search --library-type fr-firststrand \
-    --no-novel-indels /data/refs/hg19/hg19_ercc/hg19_ercc trimmed/$trimfile ###prev ${name}_trimmed.fq
+    tophat -o ${name}_aligned/ -p 4 -g 20 -G /data/refs/mm9/mp_genes.gtf --no-coverage-search --library-type fr-firststrand \
+    --no-novel-indels /data/refs/mm9/mm9 trimmed/$trimfile ###prev ${name}_trimmed.fq
 
     echo ""
     echo "3. sorting $name bam file ready for DL"

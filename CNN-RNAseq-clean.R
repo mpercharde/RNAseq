@@ -42,10 +42,12 @@ seqdata <- featureCounts(files=c("C1.sorted.bam","C2.sorted.bam","C3.sorted.bam"
                         isPairedEnd=F,nthreads=1, strandSpecific=1,countMultiMappingReads=F,chrAliases=NULL,reportReads=F)
 
 #set colnames of samples
-colnames(seqdata)<-c("MPGC1", "MPGC2", "MPGC3","MSOMA1","MSOMA2","MSOMA3","FPGC1","FPGC2","FPGC3","FSOMA1","FSOMA2","FSOMA3")  
+colnames(seqdata$counts)<-c("MPGC1", "MPGC2", "MPGC3","MSOMA1","MSOMA2","MSOMA3","FPGC1","FPGC2","FPGC3","FSOMA1","FSOMA2","FSOMA3")  
 # Xkr4	7	9	11	67	308	127	9	0	2	96	66	99
 
-        write.table(seqdata, "htseq_counts_RAW.txt", sep="\t", quote=F, row.names=T)
+        write.table(seqdata$counts, "htseq_counts_RAW.txt", sep="\t", quote=F, row.names=T)
+
+seqdata <-seqdata$counts  
 
 ####################   READ IN RAW COUNTS  ####################
 seqdata<-read.table("htseq_counts_RAW.txt", header=T, row.names=1, quote="") #use if previously exported data table.
@@ -64,6 +66,9 @@ pairs(ercc[,7:12]) #female samples
 ############################################################################################################
 
 #first filter the data to remove non-expressed rows, necessary. Generate tables for genes, and ERCCs.
+
+#alternative - only keep genes where >3 samples have a cpm >1. needs edgeR
+is.expressed <- rowSums(cpm(seqdata)>1) >= 3
 is.expressed = apply(seqdata, 1, function(row) all(row !=0 ))   #remove any rows where there's a zero value
 raw_expr <- seqdata[is.expressed,]
 ercc_expr<-raw_expr[grep("^ERCC", rownames(raw_expr)),] #get a table from subset of seqdata, only for ercc. WROTE TO FILE
