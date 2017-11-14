@@ -80,7 +80,7 @@ for file in "$dir"* ; do
       echo ""
       echo "$name is a clontech library, adaptor trimming will include clipping 3bp"
       echo ""
-      trim="trim_galore --clip_R 3"
+      trim="trim_galore --clip_R1 3"
     else
       echo ""
       echo "$name is an nebnext library"
