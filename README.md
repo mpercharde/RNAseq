@@ -8,7 +8,10 @@
 
 Script that takes input with name "sample.fq" or "sample.fq.gz" and generates sorted bams
 Bam files can then be DLed and fed into FeatureCounts in R
-/// Input files MUST begin .fq.gz or .fq **NOT** .fastq. Rename as necessary ///
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Input files MUST begin .fq.gz or .fq **NOT** .fastq. Rename as necessary
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 UPDATE 11/13/17: Added some more scripts. 
 		*Most recent* is runRNAseq-v2.sh. Includes: now aligns to transcriptome(faster), fixed Clontech clipping command, 
