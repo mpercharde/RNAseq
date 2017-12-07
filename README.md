@@ -13,11 +13,18 @@ Bam files can then be DLed and fed into FeatureCounts in R
  Input files MUST begin .fq.gz or .fq **NOT** .fastq. Rename as necessary
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-UPDATE 11/13/17: Added some more scripts. 
-		*Most recent* is runRNAseq-v2.sh. Includes: now aligns to transcriptome(faster), fixed Clontech clipping command, 
+UPDATE 12/07/17: RENAMING. NB all apart from hg19e have transcriptome-aligning now:
+runRNAseq-hg19e.sh - hg19 single-end (SE) script with ERCCS
+runRNAseq-hg19PE.sh - hg19 paired-end (PE) script
+runRNAseq-mm10e.sh - mm10 single-end (SE) script with ERCCS
+runRNAseq-mm10.sh - mm10 single-end (SE) script
+runRNAseq-mm9.sh - mm9 single-end (SE) script
+
+UPDATE 11/13/17: Added some more scripts.
+		*Most recent* is runRNAseq-v2.sh. Includes: now aligns to transcriptome(faster), fixed Clontech clipping command,
 
 UPDATE 12/18/16: Tophat working with .gz or .fq files.
-                 Currently, alignment is set to mm10 + ERCCs. 
+                 Currently, alignment is set to mm10 + ERCCs.
 
 
 FOLDERS NEEDED IN ROOT:
