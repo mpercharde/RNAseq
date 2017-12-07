@@ -22,7 +22,7 @@
   #raw/ (where raw files are)
 
   # echo "indexing the transcriptome data one time - prefix mm9" ###DO THIS FIRST TIME - run in ref/mm9 folder ###
-    # tophat -G /data/refs/mm9/mm9.gtf --transcriptome-index=transcriptome_data/known_genes
+    # tophat -G /data/refs/mm9/mm9.gtf --transcriptome-index=transcriptome_data/known_genes mm9
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 flagcheck=0
