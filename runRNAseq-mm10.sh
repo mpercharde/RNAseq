@@ -4,22 +4,25 @@
 #       RNAseq analysis pipeline                  #
 #       Michelle Percharde, PhD 2017              #
 #          Copyright M Percharde2017              #
-#                v.mm9                            #
+#                v.mm10 no ERCC                   #
 ###################################################
 
 #~~~~~~~~~~EDIT BELOW THIS LINE ~~~~~~~~~~~~~~~~~~#
 
+# THIS USES TRANSCRIPTOME ALIGNMENT -
+# CHECK IF YOU HAVE THE KNOWN_GENES FOLDER
+# IF NOT: FOR THE FIRST TIME RUN TRANSCRIPTOME INDEXING ALONE SEE BELOW, BEFORE SCRIPT. THEN RUN SCRIPT
+
 # Pipeline to take input dir with files "sample.fq" or "sample.fq.gz", outputs sorted bams
 # Bam files can then be DLed and fed into FeatureCounts in R
 
-#usage: ./runRNAseq0mm9E.sh [options] [-i path/to/folder/]
+#usage: ./runRNAseq-mm10.sh [options] [-i path/to/folder/]
 
 #FOLDERS NEEDED IN ROOT:
   #raw/ (where raw files are)
 
-# echo "indexing the transcriptome data one time - prefix mm9" ###DO THIS FIRST TIME - run in ref folder ###
-  # tophat -G /data/refs/mm9/mm9.gtf --transcriptome-index=transcriptome_data/known_genes mm9
-  # tophat -G mm9.gtf --transcriptome-index=transcriptome_data/known_genes mm9 **note 10/10/17 installed latest tophat and bowtie2 w/ conda**
+# echo "indexing the transcriptome data one time - prefix mm10" ###DO THIS FIRST TIME - run in ref/mm10 folder ###
+  # tophat -G /data/refs/mm10/mm10.gtf --transcriptome-index=transcriptome_data/known_genes
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -102,12 +105,12 @@ for file in "$dir"* ; do
     $trim --fastqc --fastqc_args " --outdir trimmed/fastqc/" --illumina $file -o trimmed/
 
     echo ""
-    echo "2. aligning $name to mm9 standard"
+    echo "2. aligning $name to mm10 standard"
     echo ""
     mkdir -p ${name}_aligned/
     tophat -o ${name}_aligned/ -p 4 -g 20 --no-coverage-search --library-type fr-firststrand \
-    --no-novel-indels --transcriptome-index=/data/refs/mm9/transcriptome_data/known_genes /data/refs/mm9/mm9 trimmed/$trimfile
-    # tophat -o ${name}_aligned/ -p 4 -g 20 -G /data/refs/mm9/mm9.gtf --no-coverage-search --library-type fr-firststrand \
+    --no-novel-indels --transcriptome-index=/data/refs/mm10/transcriptome_data/known_genes /data/refs/mm10/mm10 trimmed/$trimfile
+    # tophat -o ${name}_aligned/ -p 4 -g 20 -G /data/refs/mm10/mm10.gtf --no-coverage-search --library-type fr-firststrand \
     # --no-novel-indels /data/refs/mm9/mm9 trimmed/$trimfile
 
     echo ""
